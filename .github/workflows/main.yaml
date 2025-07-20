@@ -30,7 +30,6 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          IMAGE_TAG=$(git rev-parse --short HEAD)
           docker build -t $ECR_REGISTRY/$IMAGE_NAME:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$IMAGE_NAME:$IMAGE_TAG
         env:
